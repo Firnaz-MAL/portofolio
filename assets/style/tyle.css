@@ -1,0 +1,644 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,700&display=swap');
+
+
+/*-----------------------------------*\
+  #CUSTOM PROPERTY
+\*-----------------------------------*/
+
+
+
+:root{
+  --primarytextcolor:#232e35;
+  --secondarytextcolor:#656d72;
+
+  --bordercolor:#f1f1f1;
+  --linecolor:#d9d9d9;
+
+  --prymarybacgroundcolor:#fff;
+  --secondarybacgroundcolor:#fbfbfb;
+  --thirtdbacgroundcolor:#f5fef3;
+  --border-color:  hsla(89, 8%, 50%, 0.018);
+  --card-bg:  hsla(90, 46%, 85%, 0.018);
+  --warna-all: rgb(189,183,107) ;
+  --warna-satunya: rgb(45, 59, 86);
+
+  --primaryiconcolor:#7174f1;
+  --prymaryiconcolorhover:#5d51e8;
+
+  --sectionpadding: 6rem 0;
+
+  --itemborderradius: 0.7rem;
+
+
+  /* templete color */
+  --violet-blue-crayola: hsla(234, 50%, 64%, 1);
+  --dark-cornflower-blue_a7: hsla(214, 88%, 27%, 0.07);
+  --white: hsla(0, 0%, 100%, 1);
+  --white_a3: hsla(0, 0%, 100%, 0.03);
+  --white_a8: hsla(0, 0%, 100%, 0.08);
+  --white_a12: hsla(0, 0%, 100%, 0.12);
+  --white_a70: hsla(0, 0%, 100%, 0.7);
+  --cultured: hsla(220, 20%, 97%, 1);
+  --lavender-web: hsla(233, 52%, 94%, 1);
+  --cadet-blue-crayola: hsla(220, 12%, 70%, 1);
+  --cadet-blue-crayola_a20: hsla(222, 23%, 71%, 0.2);
+  --charcoal: rgb(45, 59, 86);
+  --raisin-black: hsla(216, 14%, 14%, 1);
+  --light-gray: hsla(0, 0%, 79%, 1);
+  --blue-crayola: hsla(219, 72%, 56%, 1);
+  --black-coral: hsla(220, 12%, 43%, 1);
+
+/* typography */
+--ff-manrope: 'Manrope', sans-serif;
+--fs-1: calc(2.7rem + 1.38vw);
+--fs-2: calc(2.6rem + .66vw);
+--fs-3: 2.2rem;
+--fs-4: 1.9rem;
+--fs-5: 1.8rem;
+--fs-6: 1.7rem;
+--fs-7: 1.5rem;
+--fs-8: 1.4rem;
+
+--fw-700: 700;
+
+/* spacing */
+--section-padding: 90px;
+
+/* shadow */
+--shadow-1: 0 0 20px hsla(216, 14%, 14%, 0.05);
+--shadow-2: 0 0 0 0.05rem hsla(214, 88%, 27%, 0.08), 0 0 1.25rem hsla(216, 14%, 14%, 0.06);
+--shadow-3: 0 0 1.25rem hsla(216, 14%, 14%, 0.04);
+
+/* border radius */
+--radius-circle: 50%;
+--radius-pill: 100px;
+--radius-10: 10px;
+--radius-8: 8px;
+--radius-6: 6px;
+
+/* transition */
+--transition-1: 0.25s ease;
+--transition-2: 0.5s ease;
+--transition-3: 0.3s ease-in-out;
+}
+
+/*-----------------------------------*\
+  #RESET
+\*-----------------------------------*/
+
+*,
+*::before,
+*::after{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto',sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6, strong{
+  color: var(--warna-satunya);
+}
+
+p{
+  font-size: 1rem;
+  line-height: 1.9rem;
+}
+
+p, span, label, input, textarea, li{
+  color: var(--warna-satunya);
+}
+
+li{
+  list-style:none;
+}
+
+a{
+text-decoration: none;
+color: inherit;
+}
+
+
+
+.main-container{
+width: 1200px;
+margin: 0 auto; 
+}
+
+/* buat lebih responsif(diem) */
+@media screen and (max-width:1200px) {
+  .main-container { 
+    width: 90%;
+  }
+}
+
+
+/*-----------------------------------*\
+  #css yg selalu di pakai
+\*-----------------------------------*/
+
+.pre-title{
+  text-transform: uppercase;
+  letter-spacing: 1rem;
+  color: var(--warna-satunya);
+  position: relative;
+  padding-left: 50px;
+  width: fit-content;
+  font-weight: 450;
+  font-size: 1rem;
+}
+
+/* buat semua huruf besar semua;
+ text-transform: uppercase;
+ 
+ buat spasi antar huruf;
+  text-transform: uppercase;*/
+
+
+.pre-title::before{
+  content: "";
+  width: 30px;
+  height: 1.5px;
+  background-color: var(--warna-all);
+  position: absolute;
+  display: block;
+  left: 0%;
+  top: 50%;
+}
+/* ini bikin garis tidur di samping name;
+.pre-title::before{
+  content: "";
+  width: 30px;
+  height: 1,5px;
+  background-color: brown;
+  position: absolute;
+  display: block;
+  left: 0%;
+  top: 50%;
+} */
+
+.section-title{
+  margin: 1rem 0 4rem;
+  font-size: 2rem;
+}
+
+
+/* kanan kiri*/
+.grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit ,minmax( 300px, 1fr));
+  gap: 1rem;
+
+  /* display: flex;
+  justify-content: space-between;
+  padding: 2rem 0; */
+}
+
+.btn{
+  background-color: #fff;
+  border: 2px solid #b1b0b0;
+  /*  border
+   border-width: 2px;
+  border-style: solid;
+  border-color: #000; */
+  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+  transition: 5s;
+}
+
+.btn:hover{
+  background-color: var(--warna-all);
+  color: #fff;
+}
+/*-----------------------------------*\
+  #logo $ Navigation Menu
+\*-----------------------------------*/
+/* buat kanan kiri */
+.nav{
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 0;
+}
+
+/* padding:vertikal and horizontal, samping */
+
+.nav ul{
+  list-style: none;
+  display: flex;
+  gap: 3rem;
+}
+
+.nav .logo{
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.nav .logo a{
+  color:var(--warna-all);
+}
+
+nav ul li{
+  display: flex;
+  align-items: center;
+}
+
+.nav ul li a{
+  color:var(--warna-satunya);
+  transition: 5s;
+}
+
+.nav ul li a:hover{
+ color: var(--warna-all);
+
+}
+
+/* burger (garis tidur) */
+
+.burger div{
+  width: 26px;
+  height: 3px;
+  background-color: black;
+  margin: 7px;
+}
+
+.burger{
+  display: none;
+  z-index: 99;
+  position: fixed;
+  top: 33;
+  right: 35px;
+}
+
+/*-----------------------------------*\
+  #Hero section
+\*-----------------------------------*/
+
+#hero{
+  padding: var(--sectionpadding);
+  height: 500px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+
+}
+
+/* buat samping kanan dan kiri;
+  height: 500px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+ */
+/* margin,searah jarum jam,kalau 2=vertikal horizontal,kalau 3=atas horizontal bawah */
+.hero-name{
+  font-size: 4rem;
+  font-weight: 750;
+  margin: 0.5rem  0  1rem;
+ }
+
+.hero-name span{
+color: darkkhaki;
+ }
+
+ .hero-name span:is(:hover, :focus-visible){
+  color: rgb(42, 198, 203);
+  transition: 5s;
+ }
+
+.hero-right img{
+  width: 85%;           
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  border-color: darkgray;
+
+}
+
+
+/*-----------------------------------*\
+  #service section
+\*-----------------------------------*/
+
+
+#services{
+  padding: var(--section-padding);
+  background-color: #fbfbfb;
+
+}
+
+.services-section .pre-title{
+  margin:0 auto;
+}
+
+.services-title{
+  text-align: center;
+}
+
+.service-card{
+  background-color:var(--card-bg);
+  padding: 100px 50px;
+  text-align: center;
+  border-radius: var(--radius-10);
+  border:0.5px solid var(--border-color);
+  box-shadow: var(--shadow-2);
+}
+
+.service-icon{
+  background-color: #fbfbfb;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 1rem 1.3rem;
+  border-radius: var(--radius-10);
+
+}
+
+.service-icon svg{
+  fill:var(--warna-satunya);
+}
+
+.service-title{
+  margin: 2rem;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+
+/*-----------------------------------*\
+  #portofolio section
+\*-----------------------------------*/
+.grid2{
+  display: flex;
+  gap: 2rem;
+}
+
+#Portofolios{
+  padding: 6rem 0;
+}
+
+.portofolio-card{
+  border-radius: 0.7rem;
+  overflow: hidden;
+  border:0.5px solid var(--border-color);
+  box-shadow: var(--shadow-2);
+}
+
+.portofolio-cover{
+  height: 250px;
+}
+
+.portofolio-cover img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover ;
+}
+
+/* buat foto sama bg sama
+
+.portofolio-cover img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover ;
+} */
+
+
+/* overflow: hidden;
+buat img ikut card */
+
+/* 
+.portofolio-img{
+height: 250px;
+}
+
+.portofolio-img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.portofolio-card .title-tags{
+  height: 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+} */
+
+.portofolio-info{
+  padding: 1.5rem 1.5rem;
+}
+
+ .portofolio-title{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+} 
+
+.portofolio-tags{
+  gap: 2rem ;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+
+/*-----------------------------------*\
+  #skills & education
+\*-----------------------------------*/
+
+#Skills{
+  padding: var(--sectionpadding);
+  background-color: var(--secondarybacgroundcolor);
+}
+
+.skills-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit ,minmax( 300px, 1fr));
+  gap: 3rem;
+}
+
+.skills-list{
+  /* display: flex;
+  gap: 10rem; */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 1.5rem;
+}
+
+.skills-list ul{
+  line-height:3.5rem;
+  padding:0 1rem ;
+}
+
+.skills-list li{
+  list-style:circle;
+}
+
+.education{
+  display: flex;
+  gap: 2.5rem;
+}
+
+.education .line{
+  padding: 0 0.7rem;
+}
+
+.education .line div{
+  background-color: var(--warna-all);
+  width: 2px;
+  height: 100%;
+  position: relative;
+}
+
+.education .education-info h4{
+  margin-block-start: 0;
+}
+
+.education .education-years{
+  margin-bottom: 2rem;
+}
+
+
+.education .line div::before{
+  content: "";
+  background-color: var(--warna-all);
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  border-radius: 50%;
+  left: -6px;
+}
+
+/*-----------------------------------*\
+  #ontact section
+\*-----------------------------------*/
+
+#Contact{
+  padding: var(--sectionpadding);
+}
+
+.contact-form div{
+  margin-bottom: 1.2rem;
+  
+}
+
+.contact-form input, .contact-form textarea{
+  width: 100%;
+  padding: 0.5rem 0 0.5rem 1rem;
+  resize: none;
+  /* resize: none; buat biar gak bisa di rubah  */
+  box-sizing: border-box;
+  /* box-sizing: border-box; kalo ngebak lagi */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: var(--secondarybacgroundcolor);
+  border: solid 1px var(--bordercolor);
+  border-radius: 3px;
+}
+
+.contact-form input::placeholder, .contact-form textarea::placeholder{
+  color: var(--warna-satunya);
+}
+
+.contact-form input:focus, .contact-form textarea:focus{
+  outline: none;
+  border-color: var(--warna-satunya);
+}
+
+.submit-btn{
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: var(--warna-satunya);
+  color: #f1f1f1;
+  border: none;
+  border-radius: var(--radius-10);
+  cursor: pointer;
+  transition: 1.5s;
+}
+
+.submit-btn:hover{
+  background-color: var(--warna-all);
+}
+
+.contact-icon{
+  background-color: #fbfbfb;
+  width: fit-content;
+  padding: 1rem 1.3rem;
+  border-radius: var(--itemborderradius);
+  
+}
+
+.contact-icon svg{
+  fill: var(--warna-satunya);
+}
+
+.contact-item{
+  display: flex;
+  gap: 1.5rem;
+  padding: 0 1rem 1.5rem;
+  align-items: center;
+}
+
+.contact-info p{
+  margin-top: .8rem;
+}
+
+
+/*-----------------------------------*\
+  #footer
+\*-----------------------------------*/
+footer{
+  padding:2rem;
+}
+
+.footer-icons{
+  text-align: center;
+  gap: 1rem;
+}
+
+.footer-text{
+  text-align: center;
+}
+
+.footer-icons a{
+  padding: 0.3rem;
+}
+
+a:hover{
+  fill: var(--warna-satunya);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
